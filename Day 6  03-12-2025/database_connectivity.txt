@@ -1,0 +1,47 @@
+import pymysql
+
+#step1: connection to the database
+
+connection = pymysql.connect(
+    host='localhost',
+    user='root',
+    password='root',
+    database='test',        # make sure this Database exists in MySQL
+    cursorclass=pymysql.cursors.DictCursor
+)
+
+
+#step2
+
+try:
+    with connection.cursor() as cursor:
+        create_query = """CREATE TABLE IF NOT EXISTS employees(
+                            id INT AUTO_INCREMENT PRIMARY KEY,
+                            name VARCHAR(100),
+                            department VARCHAR(100)
+                          );"""
+        cursor.execute(create_query)
+        connection.commit()
+
+
+#step3
+
+        insert_query = "INSERT INTO employees(name, department) VALUES (%s, %s)"
+        values = [("John", "IT"), ("Amar", "PROD"), ("Ajay", "ADMIN")]
+        cursor.executemany(insert_query, values)
+        connection.commit()
+
+
+#step4
+
+        select_query = "SELECT * FROM employees"
+        cursor.execute(select_query)
+        result = cursor.fetchall()
+        for row in result:
+            print(row)
+
+
+finally:
+
+    connection.close()
+

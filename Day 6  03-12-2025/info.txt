@@ -1,0 +1,37 @@
+File Handling in Python
+
+Two Types of files:
+text file 
+binary file => (won't be in the readable format e.g images)
+
+
+File operation:
+open
+read
+write
+close
+
+
+f1=open("file_1.txt","x")
+x == Mode
+
+
+Six types of modes:
+
+r  - read
+
+w  - write (opens the file in write mode only. It overwrites the file if it already
+     exists or creates a new file if the file does not exist. The file handler 
+     exists at the beginning.)
+
+a  - append (opens the file in append/write mode. The file handler exists at the end.)
+
+
+r+  ==> opens the file in both read and write mode. File handler exists at the 
+        beginning of the file. I/O error if file does not exist.
+
+w+  ==> opens the file in both read and write mode. It creates a new file if it 
+        does not exist or overwrites an existing file. File handler is at the end of file.
+
+a+  ==> opens the file in both read and write mode. File handler exists at the end 
+        of the file. Creates a new file if it does not exist.

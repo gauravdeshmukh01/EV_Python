@@ -1,0 +1,29 @@
+Python Collections
+
+List:[ ] mutable
+Allows Duplicate
+Any type of data can be stored
+We modify the list item.
+we can add or remove
+ex. insert(), append(), extend(), pop()
+
+
+Tuple:() immutable
+Allows Duplicate
+Any type of data can be stored
+We cannot modify the tuple item.
+we cannot add or remove item
+
+
+Set:{}
+Do not allow Duplicate,
+Duplicate values will be removed
+Any type of data can be stored
+We cannot modify the set item but we can add or remove item
+Sets are unordered.
+
+
+Dictionary:{ }Key -value pair
+Do not allow Duplicate, Duplicate value will overwrite existing value.
+Any type of data can be stored.
+{name:'Karthik'}
